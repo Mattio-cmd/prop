@@ -1,6 +1,8 @@
 # prop
 project peak
 
+## WIP
+
 ## Features
 - Its written in C
 - No dependencies
@@ -14,3 +16,7 @@ project peak
 to remove:
 
 `make clean`
+
+## Coming soon...
+- Multiple programming language support
+- Stars
