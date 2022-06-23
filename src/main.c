@@ -25,6 +25,8 @@ int main(int argc, char *argv[]) {
 
   if(strcmp(argv[1], "full") == 0) def_create_enviorment();
 
+  if(strcmp(argv[1], "M") == 0) create_makefile();
+
 
 
 

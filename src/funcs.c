@@ -15,3 +15,10 @@ int def_create_enviorment() { // This works // TODO: Improve this
 
   return 0;
 }
+
+int create_makefile() {
+  system("cp ~/.local/share/prop/Makefile .");
+
+  return 0;
+}
+
