@@ -1,5 +1,8 @@
 #include <stdlib.h>
 #include <stdio.h>
+#include <string.h>
+
+
 
 int print_usage() {
   printf("Usage:\n\tprop full\nCreates a Makefile and a project skeleton\n\n\tprop Makefile\nJust creates a decent Makefile\n\n\tprop skeleton\nJust creates the project subdirectory structure/skeleton\n\n");
