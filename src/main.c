@@ -1,6 +1,7 @@
+//TODO: Please add suport for other languages (html, latex, idk what else)
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
+
 
 #include "func.h"
 
@@ -21,12 +22,11 @@ int main(int argc, char *argv[]) {
     return -1;
   }
 
-  if(strcmp(argv[1], "-h") == 0) print_usage();
+  if(strcmp_nois(argv[1], "-h") == 0) print_usage();
 
-  if(strcmp(argv[1], "full") == 0) def_create_enviorment();
+  if(strcmp_nois(argv[1], "full") == 0) def_create_enviorment();
 
-  if(strcmp(argv[1], "M") == 0) create_makefile();
-
+  if(strcmp_nois(argv[1], "M") == 0) create_makefile();
 
 
 

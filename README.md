@@ -18,5 +18,6 @@ to remove:
 `make clean`
 
 ## Coming soon...
+- Make it windows "friendly"
 - Multiple programming language support
 - Stars
