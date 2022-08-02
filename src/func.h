@@ -1,10 +1,10 @@
 int print_usage();
 
-int def_create_enviorment();
+void def_create_enviorment();
 
 int validate_arg(char *argv[]);
 
-int strcmp_nois(const char *a, const char *b);
+int strcmp_nois(const char *s1, const char *s2);
 
 int create_makefile();
 
