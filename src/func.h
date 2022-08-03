@@ -1,16 +1,27 @@
+#define VERSION "Version 0.1"
+
+//char *LOGO[] = {"_/_/_/    _/  _/_/    _/_/    _/_/_/",
+//                "_/    _/  _/_/      _/    _/  _/    _/",
+//                "_/    _/  _/        _/    _/  _/    _/",
+//                "_/_/_/    _/          _/_/    _/_/_/",
+//                "_/                            _/",
+//                "_/                            _/",
+//};
+
 int print_usage();
 
 void def_create_enviorment();
 
-int validate_arg(char *argv[]);
+void create_skeleton();
 
-int strcmp_nois(const char *s1, const char *s2);
+int strcmp_nois(const char *str1, const char *str2);
 
-int create_makefile();
+void create_makefile();
+
+void def_create_enviorment_py();
 
 typedef struct Project {
   char name[20];
   char language[15];
 
 } Project;
-

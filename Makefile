@@ -18,6 +18,7 @@ release: $(BIN)
 
 install: $(OBJS)
 	$(CC) $(CFLAGS) $(OBJS) -o $(INSTALLPATH)
+	strip $(INSTALLPATH)
 	#mkdir ~/.local/share/prop
 	#cp ./src/prop/Makefile ~/.local/share/prop/
 
