@@ -1,35 +1,38 @@
-CC=cc
-CFLAGS= -g -Wall
-BINDIR=bin
-BIN = $(BINDIR)/main
-SRC=src
-OBJ=obj
-SRCS=$(wildcard $(SRC)/*.c)
-OBJS=$(patsubst $(SRC)/%.c, $(OBJ)/%.o, $(SRCS))
+CC = cc
+CFLAGS = -g -Wall
 
-INSTALLPATH=~/.local/bin
+SRC = src
+OBJ = obj
+BINDIR = bin
+INSTALLPATH = $(HOME)/.local/bin
 
-all:$(BIN)
+SRCS = $(wildcard $(SRC)/*.c)
+OBJS = $(patsubst $(SRC)/%.c, $(OBJ)/%.o, $(SRCS))
+BIN = $(BINDIR)/prop
 
-release: CC=clang
-release: CFLAGS=-Wall -O2 -DNDEBUG
+# default target
+all: $(BIN)
+
+release: CC = clang
+release: CFLAGS = -Wall -O2 -DNDEBUG
 release: clean
 release: $(BIN)
 
-install: $(OBJS)
-	$(CC) $(CFLAGS) $(OBJS) -o $(INSTALLPATH)
-	strip $(INSTALLPATH)
-	#mkdir ~/.local/share/prop
-	#cp ./src/prop/Makefile ~/.local/share/prop/
+install: $(BIN)
+	@mkdir -p $(INSTALLPATH)
+	@cp $(BIN) $(INSTALLPATH)/prop
+	@strip $(INSTALLPATH)/prop
+	@echo "Installed to $(INSTALLPATH)/prop"
 
 $(OBJ)/%.o: $(SRC)/%.c
+	@mkdir -p $(OBJ)
 	$(CC) $(CFLAGS) -c $< -o $@
 
 $(BIN): $(OBJS)
+	@mkdir -p $(BINDIR)
 	$(CC) $(CFLAGS) $(OBJS) -o $@
 
-$(OBJ)/%.o: $(SRC)/%.c
-	$(CC) $(CFLAGS) -c $< -o $@
-
 clean:
-	$(RM) -r $(BINDIR)/* $(OBJ)/*
+	rm -rf $(BINDIR)/* $(OBJ)/*
+
+.PHONY: all release install clean
