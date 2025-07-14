@@ -7,7 +7,7 @@ OBJ=obj
 SRCS=$(wildcard $(SRC)/*.c)
 OBJS=$(patsubst $(SRC)/%.c, $(OBJ)/%.o, $(SRCS))
 
-INSTALLPATH=~/.local/bin/prop
+INSTALLPATH=~/.local/bin
 
 all:$(BIN)
 
